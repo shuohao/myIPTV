@@ -24,6 +24,7 @@ jobs:
           git fetch upstream
           git checkout main
           git merge upstream/main -X theirs --allow-unrelated-histories || true
+          git add.
           if [ -n "$(git status --porcelain)" ]; then
             git add .
             git commit -m "Auto-merged with upstream/main using theirs strategy"
